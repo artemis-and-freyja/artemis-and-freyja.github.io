@@ -246,14 +246,22 @@ collection: blog
   {{> head }}
 
   <body>
+    {{> navigation }}
+
     <main>
-    <h1>{{ title }}</h1>
-    {{{ contents }}}
+      <article>
+        <header>
+          <h1>{{ title }}</h1>
+          <div> by {{ author }}</div>
+        </header>
+        {{{ contents }}}
+      </article>
+    
+      <footer>
+        {{#with previous }}<a href="/{{ path }}">previous post</a>{{/with}}
+        {{#with next }}<a href="/{{ path }}">next post</a>{{/with}}
+      </footer>
     </main>
-    <footer>
-      <a href="{{ previous }}">previous post</a>
-      <a href="{{ next }}">next post</a>
-    </footer>
   </body>
 </html>
 <!doctype html>

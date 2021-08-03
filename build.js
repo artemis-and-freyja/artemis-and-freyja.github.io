@@ -97,7 +97,7 @@ if (argv.dev) {
 
 } else {
   // if we're not in development mode, just build the site so we can publish it
-  build('./dist');
+  build('./docs');
 }
 
 
